@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Index</title>
+    </head>
+    <body>
+        <h1>Index desde la capa ejecución</h1>
+        <table>
+            {% for c in obj%}
+                <tr>
+                    <td>{{ c.id }}</td>
+                    <td>{{ c.status }}</td>
+                </tr>
+            {% endfor %}
+            {{ obj }}
+        </table>
+    </body>
+</html>

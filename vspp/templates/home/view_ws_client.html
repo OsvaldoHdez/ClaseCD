@@ -1,0 +1,18 @@
+{% extends 'base/base.html' %}
+{% block title %}WSClient{% endblock %}
+{% block content %}
+    <table class="table">
+        <thead class="table-dark">
+            <th>USER CODE</th>
+            <th>USER PHONE</th>
+            <th>USER STATUS</th>
+        </thead>
+            {% for client in obj %}
+                <tr>
+                    <td>{{ client.fields.user }}</td>
+                    <td>{{ client.fields.phone }}</td>
+                    <td>{{ client.fields.status }}</td>
+                </tr>
+            {% endfor %}
+    </table>
+{% endblock content %}

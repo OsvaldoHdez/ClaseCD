@@ -1,0 +1,16 @@
+{% extends 'base/base.html' %}
+
+{% block title %}List Client{% endblock title %}
+
+{% block content %}
+  <table class="table table-striped table-dark">
+    {% for client in object_list %}
+      <tr>
+        <td>{{ client.user.username }}</td>
+        <td>{{ client.user.email}}</td>
+        <td>{{ client.phone}}</td>
+        <td>{{ client.status}}</td>
+      </tr>
+    {% endfor %}
+  </table>
+{% endblock content %}

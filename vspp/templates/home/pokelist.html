@@ -1,0 +1,12 @@
+{% extends 'base/base.html' %}
+{% block title %}POKELIST{% endblock title %}
+{% block content %}
+    <table class="table table-striped">
+        {% for p in pokemon %}
+            <tr>
+                <td>{{p.move.name}}</td>
+                <td>{{p.move.url}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock content %}
