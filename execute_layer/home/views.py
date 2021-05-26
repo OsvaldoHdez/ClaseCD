@@ -18,3 +18,21 @@ def createCLI(request):
         "message": "Correcto"
     }
     return render(request, "home/create_cli.html", context)
+
+def create_form(request):
+    phone = request.GET("phone")
+    user = request.GET("user")
+    status = request.GET("status")
+    if status == "on":
+        status = True
+    else: 
+        status = False
+    payload = {"phone": phone, "status": status, "user": user}
+    print(payload)
+    # print("{0}-{1}-{2}".format(phone, user, status))
+    url = "http://127.0.0.1:8000/home/v1/clients"
+    response = requests.post(url, data=payload)
+    context = {
+        "message": response.status_code
+    }
+    return render(request, "home/create_form.html", context)
